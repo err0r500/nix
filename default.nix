@@ -5,5 +5,6 @@ nixPkgs:
 
   bundles = {
     elm = import ./bundles/elm.nix;
+    networking-tools = import ./bundles/networking-tools.nix;
   };
 }
