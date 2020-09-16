@@ -1,26 +1,28 @@
 # nix
 
 ## basic usage 
-Clone this repo
-
-then create another file to set (for example) everything you need for your elm development
+create a file to set (for example) everything you need for your elm development, say : `elm-shell.nix`
 
 ```
 {pkgs ? import <nixpkgs> {}}:
 
 let 
-  elm-env = import <path-to-cloned-repo>/bundles/elm.nix pkgs;
+  src = builtins.fetchGit {
+    url = "https://github.com/err0r500/nix";
+    ref = "master"; # or pin a specific commit, see https://nixos.org/manual/nix/stable/#builtin-fetchGit
+  };
+  altPkgs = import src pkgs; 
 in 
 pkgs.mkShell {
   buildInputs = with pkgs; 
-    elm-env 
+    altPkgs.bundles.elm pkgs # it's a simple list, so it can be manipulated as desired
     ++ [
-      neovim
+      neovim # we add an editor
     ];
 }
 ```
 
-start a shell with
+start a shell with :
 ```
-nix-shell <path-to-your-file>.nix
+nix-shell elm-shell.nix
 ```
