@@ -7,5 +7,6 @@ in
       nixPkgs.elmPackages.elm-language-server
       nixPkgs.elmPackages.elm-format
       nixPkgs.elmPackages.elm-test
+      nixPkgs.elmPackages.elm-live
     ]
 
