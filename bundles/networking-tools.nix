@@ -1,4 +1,4 @@
-nixPkgs:
+nixpkgs:
  [
    nixpkgs.tcpdump
    nixpkgs.dhcpdump
