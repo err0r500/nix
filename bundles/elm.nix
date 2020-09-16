@@ -5,5 +5,7 @@ in
     with altPkgs; [ 
       altPkgs.elm_0_19_1
       nixPkgs.elmPackages.elm-language-server
+      nixPkgs.elmPackages.elm-format
+      nixPkgs.elmPackages.elm-test
     ]
 
