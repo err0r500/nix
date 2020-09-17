@@ -7,5 +7,5 @@ nixpkgs:
    nixpkgs.ncat
    nixpkgs.termshark
    nixpkgs.wireshark
-   nixpkgs.bind # brings dig
+   nixpkgs.dnsutils
  ]
